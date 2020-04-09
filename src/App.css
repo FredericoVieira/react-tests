@@ -9,3 +9,7 @@
   font-size: calc(10px + 1.2vmin);
   color: white;
 }
+
+.counter-value {
+  margin: 10px;
+}

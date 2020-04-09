@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useCounter from '../hooks/useCounter.hook'
 
-function Counter({ onCountChange = () => {} }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    onCountChange(count)
-  }, [onCountChange, count]);
+function Counter() {
+  const { count, increment, decrement } = useCounter({ initialCount: 1 });
 
   return (
     <div>
-      <button id="btn-count" onClick={() => setCount(count + 1)}>Increment Count</button>
-      <p id="p-count">Count: {count}</p>
+      <button id="btn-decrement" onClick={decrement}>-</button>
+      <span id="span-count" className="counter-value">{count}</span>
+      <button id="btn-increment" onClick={increment}>+</button>
     </div>
   );
 }

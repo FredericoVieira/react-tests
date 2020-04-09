@@ -3,12 +3,10 @@ import { mount } from 'enzyme';
 import Counter from '../Counter.component';
 
 describe('Counter', () => {
-  const onCountChange = jest.fn();
   let wrapper;
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    wrapper = mount(<Counter onCountChange={onCountChange} />);
+    wrapper = mount(<Counter />);
   });
 
   it('should render', () => {
@@ -16,25 +14,19 @@ describe('Counter', () => {
   });
 
   it('should show my default text', () => {
-    expect(wrapper.find('#p-count').text()).toEqual('Count: 0');
+    expect(wrapper.find('#span-count').text()).toEqual('1');
   });
 
   it('should increment count by 1', () => {
-    wrapper.find('#btn-count').simulate('click');
-    expect(wrapper.find('#p-count').text()).toEqual('Count: 1');
+    wrapper.find('#btn-increment').simulate('click');
+    expect(wrapper.find('#span-count').text()).toEqual('2');
   });
 
   it('should increment count by 4', () => {
-    wrapper.find('#btn-count').simulate('click');
-    wrapper.find('#btn-count').simulate('click');
-    wrapper.find('#btn-count').simulate('click');
-    wrapper.find('#btn-count').simulate('click');
-    expect(wrapper.find('#p-count').text()).toEqual('Count: 4');
-  });
-
-  it('should call onCountChange', () => {
-    expect(onCountChange).toBeCalledTimes(1);
-    wrapper.find('#btn-count').simulate('click');
-    expect(onCountChange).toBeCalledTimes(2);
+    wrapper.find('#btn-increment').simulate('click');
+    wrapper.find('#btn-increment').simulate('click');
+    wrapper.find('#btn-increment').simulate('click');
+    wrapper.find('#btn-increment').simulate('click');
+    expect(wrapper.find('#span-count').text()).toEqual('5');
   });
 });

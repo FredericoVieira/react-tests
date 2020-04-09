@@ -5,7 +5,7 @@ function ToggleText() {
 
   return (
     <div>
-      <button id="btn-toggle" onClick={() => setIsShown(!isShown)}>Toggle</button>
+      <button id="btn-toggle" onClick={() => setIsShown(!isShown)}>Toggle Text</button>
       {isShown && <p id="p-toggle">Text goes here</p>}
     </div>
   );
