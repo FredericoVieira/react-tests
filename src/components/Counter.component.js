@@ -6,9 +6,9 @@ function Counter() {
 
   return (
     <div>
-      <button id="btn-decrement" onClick={decrement}>-</button>
-      <span id="span-count" className="counter-value">{count}</span>
-      <button id="btn-increment" onClick={increment}>+</button>
+      <button id="btn-decrement" className="neumorphic btn btn-counter" onClick={decrement}>-</button>
+      <span id="span-count" className="margin-large">{count}</span>
+      <button id="btn-increment" className="neumorphic btn btn-counter" onClick={increment}>+</button>
     </div>
   );
 }

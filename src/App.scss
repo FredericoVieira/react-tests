@@ -1,0 +1,125 @@
+.app-container {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  font-size: calc(10px + 1.2vmin);
+  color: white;
+}
+
+.margin-default {
+  margin: 5px;
+}
+
+.margin-large {
+  margin: 20px;
+}
+
+.neumorphic {
+  border-radius: 10px;
+  background: #282c34;
+  box-shadow: 5px 5px 12px #1f2228, 
+              -5px -5px 12px #313640;
+}
+
+.neumorphic-pressed {
+  border-radius: 10px;
+  background: #282c34;
+  box-shadow: inset 5px 5px 12px #1f2228, 
+              inset -5px -5px 12px #313640;
+}
+
+.btn {
+  border: none;
+  color: white;
+
+  &-toggle {
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+
+    span {
+        display: block;
+        padding-bottom: 0.7rem;
+        position: relative;
+    }
+
+    span::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0.1rem;
+      border-radius: 1rem;
+      width: 20%;
+      margin: 0 auto;
+      background-color: currentColor;
+    }
+  }
+  
+  &-counter {
+    width: 50px;
+    height: 50px;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.races-container {
+  margin: 20px auto 50px auto;
+  width: 90%;
+}
+
+.col {
+  align-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  transition: box-shadow 399ms ease-in-out;
+
+  &-content {
+    padding: 3rem 1rem;
+  }
+
+  &-title {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: white;
+  }
+
+  &-text {
+    margin-top: 30px;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #787878;
+
+    &__link {
+      font-weight: 500;
+      text-decoration: none;
+      color: rgb(255, 7, 110);
+    }
+  }
+
+  .circuit-name {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  &:hover {
+    box-shadow: inset 5px 5px 12px #1f2228, 
+    inset -5px -5px 12px #313640;
+  }
+}
+
